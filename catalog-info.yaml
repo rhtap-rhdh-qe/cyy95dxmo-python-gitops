@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cyy95dxmo-python-gitops
+  description: This is GitOps manifest for cyy95dxmo-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=cyy95dxmo-python
+    backstage.io/kubernetes-id: cyy95dxmo-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cyy95dxmo-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cyy95dxmo-python
